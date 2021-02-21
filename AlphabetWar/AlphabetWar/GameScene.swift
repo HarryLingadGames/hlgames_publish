@@ -13,6 +13,7 @@ import CoreMotion
 protocol KeyBoardProtocol {
     func showKeyboard()
     func hideKeyBoard()
+    func openAdmob()
 }
 
 class GameScene: SKScene, SKPhysicsContactDelegate {
