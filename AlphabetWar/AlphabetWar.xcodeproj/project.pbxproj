@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -42,9 +42,11 @@
 		3CB6C88925C68C840077B5FB /* GameScene+StandBy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB6C88825C68C840077B5FB /* GameScene+StandBy.swift */; };
 		3CB6C88B25C68CE50077B5FB /* AWGameGameOverComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB6C88A25C68CE50077B5FB /* AWGameGameOverComponents.swift */; };
 		3CB6C88D25C68D0A0077B5FB /* GameScene+GameOver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB6C88C25C68D0A0077B5FB /* GameScene+GameOver.swift */; };
+		6D67A00F88A0317E9654E6A0 /* Pods_AlphabetWar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BCC8C81DB33DAA7174A54D7 /* Pods_AlphabetWar.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1257093460DE4638F4D6EA91 /* Pods-AlphabetWar.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlphabetWar.debug.xcconfig"; path = "Target Support Files/Pods-AlphabetWar/Pods-AlphabetWar.debug.xcconfig"; sourceTree = "<group>"; };
 		3C0316EA25C64E1D00F5371C /* AlphabetWar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AlphabetWar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C0316ED25C64E1D00F5371C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3C0316EF25C64E1D00F5371C /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -82,6 +84,8 @@
 		3CB6C88825C68C840077B5FB /* GameScene+StandBy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameScene+StandBy.swift"; sourceTree = "<group>"; };
 		3CB6C88A25C68CE50077B5FB /* AWGameGameOverComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AWGameGameOverComponents.swift; sourceTree = "<group>"; };
 		3CB6C88C25C68D0A0077B5FB /* GameScene+GameOver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameScene+GameOver.swift"; sourceTree = "<group>"; };
+		90D099FAF0ABB04F7504B256 /* Pods-AlphabetWar.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlphabetWar.release.xcconfig"; path = "Target Support Files/Pods-AlphabetWar/Pods-AlphabetWar.release.xcconfig"; sourceTree = "<group>"; };
+		9BCC8C81DB33DAA7174A54D7 /* Pods_AlphabetWar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AlphabetWar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +93,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6D67A00F88A0317E9654E6A0 /* Pods_AlphabetWar.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -100,6 +105,8 @@
 			children = (
 				3C0316EC25C64E1D00F5371C /* AlphabetWar */,
 				3C0316EB25C64E1D00F5371C /* Products */,
+				ED37126E3BE0299971776E18 /* Pods */,
+				B5B4523EC4E4721D14FC0786 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -226,6 +233,23 @@
 			path = GameOverStatus;
 			sourceTree = "<group>";
 		};
+		B5B4523EC4E4721D14FC0786 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9BCC8C81DB33DAA7174A54D7 /* Pods_AlphabetWar.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		ED37126E3BE0299971776E18 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1257093460DE4638F4D6EA91 /* Pods-AlphabetWar.debug.xcconfig */,
+				90D099FAF0ABB04F7504B256 /* Pods-AlphabetWar.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -233,9 +257,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3C03170225C64E1F00F5371C /* Build configuration list for PBXNativeTarget "AlphabetWar" */;
 			buildPhases = (
+				B3234AE9F3CCCE20392EC127 /* [CP] Check Pods Manifest.lock */,
 				3C0316E625C64E1D00F5371C /* Sources */,
 				3C0316E725C64E1D00F5371C /* Frameworks */,
 				3C0316E825C64E1D00F5371C /* Resources */,
+				49FCA5C5A0DA37132CDFD0A2 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -303,6 +329,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		49FCA5C5A0DA37132CDFD0A2 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AlphabetWar/Pods-AlphabetWar-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AlphabetWar/Pods-AlphabetWar-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AlphabetWar/Pods-AlphabetWar-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B3234AE9F3CCCE20392EC127 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AlphabetWar-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		3C0316E625C64E1D00F5371C /* Sources */ = {
@@ -474,6 +542,7 @@
 		};
 		3C03170325C64E1F00F5371C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1257093460DE4638F4D6EA91 /* Pods-AlphabetWar.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -488,6 +557,63 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.06;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-l\"c++\"",
+					"-l\"sqlite3\"",
+					"-l\"z\"",
+					"-framework",
+					"\"AVFoundation\"",
+					"-framework",
+					"\"AudioToolbox\"",
+					"-framework",
+					"\"CFNetwork\"",
+					"-framework",
+					"\"CoreGraphics\"",
+					"-framework",
+					"\"CoreMedia\"",
+					"-framework",
+					"\"CoreTelephony\"",
+					"-framework",
+					"\"CoreVideo\"",
+					"-framework",
+					"\"FBLPromises\"",
+					"-framework",
+					"\"GoogleAppMeasurement\"",
+					"-framework",
+					"\"GoogleMobileAds\"",
+					"-framework",
+					"\"GoogleUtilities\"",
+					"-framework",
+					"\"MediaPlayer\"",
+					"-framework",
+					"\"MessageUI\"",
+					"-framework",
+					"\"MobileCoreServices\"",
+					"-framework",
+					"\"QuartzCore\"",
+					"-framework",
+					"\"Security\"",
+					"-framework",
+					"\"StoreKit\"",
+					"-framework",
+					"\"SystemConfiguration\"",
+					"-framework",
+					"\"UserMessagingPlatform\"",
+					"-framework",
+					"\"WebKit\"",
+					"-framework",
+					"\"nanopb\"",
+					"-weak_framework",
+					"\"AdSupport\"",
+					"-weak_framework",
+					"\"JavaScriptCore\"",
+					"-weak_framework",
+					"\"SafariServices\"",
+					"-weak_framework",
+					"\"WebKit\"",
+					"-ObjC",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.harrylingadgames.AlphabetWar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "AW Distribution Provisioning Profile";
@@ -498,6 +624,7 @@
 		};
 		3C03170425C64E1F00F5371C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 90D099FAF0ABB04F7504B256 /* Pods-AlphabetWar.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -512,6 +639,63 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.06;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-l\"c++\"",
+					"-l\"sqlite3\"",
+					"-l\"z\"",
+					"-framework",
+					"\"AVFoundation\"",
+					"-framework",
+					"\"AudioToolbox\"",
+					"-framework",
+					"\"CFNetwork\"",
+					"-framework",
+					"\"CoreGraphics\"",
+					"-framework",
+					"\"CoreMedia\"",
+					"-framework",
+					"\"CoreTelephony\"",
+					"-framework",
+					"\"CoreVideo\"",
+					"-framework",
+					"\"FBLPromises\"",
+					"-framework",
+					"\"GoogleAppMeasurement\"",
+					"-framework",
+					"\"GoogleMobileAds\"",
+					"-framework",
+					"\"GoogleUtilities\"",
+					"-framework",
+					"\"MediaPlayer\"",
+					"-framework",
+					"\"MessageUI\"",
+					"-framework",
+					"\"MobileCoreServices\"",
+					"-framework",
+					"\"QuartzCore\"",
+					"-framework",
+					"\"Security\"",
+					"-framework",
+					"\"StoreKit\"",
+					"-framework",
+					"\"SystemConfiguration\"",
+					"-framework",
+					"\"UserMessagingPlatform\"",
+					"-framework",
+					"\"WebKit\"",
+					"-framework",
+					"\"nanopb\"",
+					"-weak_framework",
+					"\"AdSupport\"",
+					"-weak_framework",
+					"\"JavaScriptCore\"",
+					"-weak_framework",
+					"\"SafariServices\"",
+					"-weak_framework",
+					"\"WebKit\"",
+					"-ObjC",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.harrylingadgames.AlphabetWar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "AW Distribution Provisioning Profile";

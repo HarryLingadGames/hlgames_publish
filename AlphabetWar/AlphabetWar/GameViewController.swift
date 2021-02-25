@@ -11,6 +11,8 @@
 import UIKit
 import SpriteKit
 import GameplayKit
+import GoogleMobileAds
+//import StoreKit
 
 protocol GameViewControllerProtocol {
     func fireTorpedo(type: LetterType)
@@ -22,41 +24,33 @@ protocol PlayComponentProtocol {
     func updateKeyboardHeight(height: CGFloat)
 }
 
-class GameViewController: UIViewController, KeyBoardProtocol, UITextFieldDelegate {
-
-
-
+class GameViewController: UIViewController, KeyBoardProtocol, UITextFieldDelegate, GADFullScreenContentDelegate {
+    
     var awTextField: UITextField = UITextField()
     var gameDelegate: GameViewControllerProtocol?
     var playComponentDelegate: PlayComponentProtocol?
     var isKeyBoardShown: Bool = false
+    
+    private var interstitial: GADInterstitialAd?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print("DEVICE SCREEN WIDTH: \(self.view.frame.width)")
-        print("DEVICE SCREEN HEIGHT: \(self.view.frame.height)")
+        createAd()
 
         let notificationCenter = NotificationCenter.default
         notificationCenter.addObserver(self, selector: #selector(appMovedToBackground), name: UIApplication.willResignActiveNotification, object: nil)
 
-
-        
         // Load 'GameScene.sks' as a GKScene. This provides gameplay related content
         // including entities and graphs.
         if let scene = GKScene(fileNamed: "GameScene") {
             
             // Get the SKScene from the loaded GKScene
             if let sceneNode = scene.rootNode as! GameScene? {
-//                sceneNode.playComponents.gameViewController = self
                 sceneNode.gameViewController = self
                 sceneNode.keyBoardDelegate = self
                 sceneNode.size.width = self.view.frame.width
                 sceneNode.size.height = (self.view.frame.width * GameDimension.TARGET_GAMESCREEN_HEIGHT) / GameDimension.TARGET_GAMESCREEN_WIDTH
-                
-                
-                print("GAMESCREEN WIDTH: \(sceneNode.size.width)")
-                print("GAMESCREEN HEIGHT: \(sceneNode.size.height)")
                 
                 // Copy gameplay related content over to the scene
 //                sceneNode.entities = scene.entities
@@ -78,9 +72,7 @@ class GameViewController: UIViewController, KeyBoardProtocol, UITextFieldDelegat
                 }
             }
         }
-
         setUpKeyboard()
-
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -88,22 +80,14 @@ class GameViewController: UIViewController, KeyBoardProtocol, UITextFieldDelegat
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
 
         NotificationCenter.default.addObserver(self, selector: #selector(changeKeyboardType), name: UIResponder.keyboardDidChangeFrameNotification, object: nil)
-//        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder. , object: nil)
-//        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
-//        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
-
     }
-
-
 
     @objc func changeKeyboardType(notification: NSNotification) {
 
         if let keyBoardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
-            print("KEYBOARDHEIGHT: \(keyBoardSize.height)")
             playComponentDelegate?.updateKeyboardHeight(height: keyBoardSize.height)
         }
     }
-
 
     override var shouldAutorotate: Bool {
         return true
@@ -139,7 +123,6 @@ class GameViewController: UIViewController, KeyBoardProtocol, UITextFieldDelegat
         isKeyBoardShown = false
     }
 
-
     @objc func keyboardWillShow(notification: NSNotification) {
         if let keyBoardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue, !isKeyBoardShown {
             playComponentDelegate?.setKeyboardHeight(height: keyBoardSize.height)
@@ -148,7 +131,6 @@ class GameViewController: UIViewController, KeyBoardProtocol, UITextFieldDelegat
     }
 
     @objc func appMovedToBackground() {
-        print("App moved to background!")
         gameDelegate?.gotoBackGround()
     }
 
@@ -157,11 +139,59 @@ class GameViewController: UIViewController, KeyBoardProtocol, UITextFieldDelegat
         gameDelegate?.fireTorpedo(type: LetterType.getType(stringLetter: string))
         return true
     }
-
-
-
     
+//    func openRateMe() {
+//        guard let scene = view.window?.windowScene else {
+//            debugPrint("scene is nil")
+//            return
+//        }
+//        
+//        if #available(iOS 14.0, *) {
+//            SKStoreReviewController.requestReview(in: scene)
+//        } else {
+//            SKStoreReviewController.requestReview()
+//        }
+//    }
 
+    func openAdmob() {
+        if interstitial != nil {
+            interstitial?.present(fromRootViewController: self)
+        } else {
+            print("Ad wasn't ready")
+        }
+    }
     
+    
+    
+    //Production Ad Unit ID: ca-app-pub-9451992469726968/2509211671
+    private func createAd() {
+        let request = GADRequest()
+        GADInterstitialAd.load(withAdUnitID:"ca-app-pub-3940256099942544/4411468910",
+                               request: request,
+                               completionHandler: { [self] ad, error in
+                                if let error = error {
+                                    print("Failed to load interstitial ad with error: \(error.localizedDescription)")
+                                    return
+                                }
+                                interstitial = ad
+                                interstitial?.fullScreenContentDelegate = self
+                               }
+        )
+    }
+    
+    /// Tells the delegate that the ad failed to present full screen content.
+      func ad(_ ad: GADFullScreenPresentingAd, didFailToPresentFullScreenContentWithError error: Error) {
+        print("Ad did fail to present full screen content.")
+      }
 
+      /// Tells the delegate that the ad presented full screen content.
+      func adDidPresentFullScreenContent(_ ad: GADFullScreenPresentingAd) {
+        print("Ad did present full screen content.")
+      }
+
+      /// Tells the delegate that the ad dismissed full screen content.
+      func adDidDismissFullScreenContent(_ ad: GADFullScreenPresentingAd) {
+        print("Ad did dismiss full screen content.")
+        createAd()
+      }
 }
