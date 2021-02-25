@@ -102,6 +102,15 @@ extension GameScene: GameViewControllerProtocol{
             keyBoardDelegate?.hideKeyBoard()
             initializeGameOverComponents(score: playComponents.recordNode.score)
             gameStatus = .GameOver
+            
+            if playComponents.numberOfGameOver / 5 == 1 {
+                playComponents.numberOfGameOver = 0
+                playComponents.defaults.set(playComponents.numberOfGameOver, forKey: "numberOfGameOver")
+                keyBoardDelegate?.openAdmob()
+            }else {
+                playComponents.numberOfGameOver += 1
+                playComponents.defaults.set(playComponents.numberOfGameOver, forKey: "numberOfGameOver")
+            }
         }
 
         if let explosion = SKEmitterNode(fileNamed: "base_explosion") {
