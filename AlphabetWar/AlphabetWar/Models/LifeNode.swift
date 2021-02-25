@@ -56,7 +56,7 @@ class LifeNode: SKSpriteNode{
             lifeFires.last?.removeFromParent()
             lifeFires.removeLast()
         }
-        print("REMAINING LIFE : \(numberOfLife)")
+        debugPrint("REMAINING LIFE : \(numberOfLife)")
     }
 
     func isUserDead() -> Bool{

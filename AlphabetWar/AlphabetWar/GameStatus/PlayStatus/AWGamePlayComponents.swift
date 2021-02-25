@@ -13,6 +13,7 @@ import CoreMotion
 class AWGamePlayComponents: NSObject, PlayComponentProtocol {
 
     var level: Int = 1
+    var numberOfGameOver: Int = 0
     let defaults = UserDefaults.standard
     var lifeNode: LifeNode!
 
@@ -104,6 +105,10 @@ class AWGamePlayComponents: NSObject, PlayComponentProtocol {
         floorNode.run(SKAction.move(to: CGPoint(x: 0, y: -floorNode.size.height), duration: 0.3))
         lifeNode.run(SKAction.move(to: lifeNode.oldPosition(scene: scene), duration: 0.3))
         
+    }
+    
+    func setUpNumberOfGameOver() {
+        numberOfGameOver = defaults.integer(forKey: "numberOfGameOver")
     }
     
     func showAllComponents(scene: GameScene){

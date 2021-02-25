@@ -14,6 +14,7 @@ protocol KeyBoardProtocol {
     func showKeyboard()
     func hideKeyBoard()
     func openAdmob()
+//    func openRateMe()
 }
 
 class GameScene: SKScene, SKPhysicsContactDelegate {
