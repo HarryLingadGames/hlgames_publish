@@ -103,7 +103,7 @@ extension GameScene: GameViewControllerProtocol{
             initializeGameOverComponents(score: playComponents.recordNode.score)
             gameStatus = .GameOver
             
-            if playComponents.numberOfGameOver / 5 == 1 {
+            if playComponents.numberOfGameOver / 4 == 1 {
                 playComponents.numberOfGameOver = 0
                 playComponents.defaults.set(playComponents.numberOfGameOver, forKey: "numberOfGameOver")
                 keyBoardDelegate?.openAdmob()
