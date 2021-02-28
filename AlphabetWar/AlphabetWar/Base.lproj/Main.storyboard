@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BV1-FR-VrT">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="R2w-Gi-0Ir">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -9,16 +9,59 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Splash Screen View Controller-->
+        <scene sceneID="hea-8v-kOc">
+            <objects>
+                <viewController id="R2w-Gi-0Ir" customClass="SplashScreenViewController" customModule="AlphabetWar" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="URC-dB-MAs">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AppLogo" translatesAutoresizingMaskIntoConstraints="NO" id="8bq-Dg-4NZ">
+                                <rect key="frame" x="147" y="388" width="120" height="120"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="120" id="QFM-ig-PA4"/>
+                                    <constraint firstAttribute="height" constant="120" id="eEn-U3-R4u"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="92P-1V-jvP">
+                                <rect key="frame" x="344" y="796" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="Frq-5V-sHo"/>
+                                    <constraint firstAttribute="width" constant="50" id="Jde-4M-XQi"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="play"/>
+                                <connections>
+                                    <action selector="gotoGameScreen:" destination="R2w-Gi-0Ir" eventType="touchUpInside" id="cYt-8k-0V9"/>
+                                    <segue destination="BV1-FR-VrT" kind="presentation" identifier="goToGameScreen" modalPresentationStyle="fullScreen" id="pK9-Aw-6kY"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="nnF-ar-sL9"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="8bq-Dg-4NZ" firstAttribute="centerX" secondItem="URC-dB-MAs" secondAttribute="centerX" id="LMj-bH-b0N"/>
+                            <constraint firstAttribute="bottom" secondItem="92P-1V-jvP" secondAttribute="bottom" constant="50" id="Lad-Ie-bFw"/>
+                            <constraint firstItem="8bq-Dg-4NZ" firstAttribute="centerY" secondItem="URC-dB-MAs" secondAttribute="centerY" id="apg-Q8-KK8"/>
+                            <constraint firstAttribute="trailing" secondItem="92P-1V-jvP" secondAttribute="trailing" constant="20" id="irw-JB-aOr"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cK9-83-Itg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-767" y="108"/>
+        </scene>
         <!--Game View Controller-->
         <scene sceneID="tXr-a1-R10">
             <objects>
-                <viewController id="BV1-FR-VrT" customClass="GameViewController" customModule="AlphabetWar" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="GameViewController" id="BV1-FR-VrT" customClass="GameViewController" customModule="AlphabetWar" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" multipleTouchEnabled="YES" contentMode="scaleToFill" id="3se-qz-xqx" customClass="SKView">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="4qk-I5-YsI"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <navigationItem key="navigationItem" id="lch-Wt-L3j"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
             </objects>
@@ -26,6 +69,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="AppLogo" width="1200" height="1200"/>
+        <image name="play" width="250" height="300"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

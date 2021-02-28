@@ -15,6 +15,7 @@
 		3C0316F925C64E1D00F5371C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C0316F725C64E1D00F5371C /* Main.storyboard */; };
 		3C0316FB25C64E1F00F5371C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3C0316FA25C64E1F00F5371C /* Assets.xcassets */; };
 		3C0316FE25C64E1F00F5371C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C0316FC25C64E1F00F5371C /* LaunchScreen.storyboard */; };
+		3C1C46A925EB2C6300557025 /* SplashScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C1C46A825EB2C6300557025 /* SplashScreenViewController.swift */; };
 		3CAF2DFD25CFEC57003A2DFF /* ScoreNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CAF2DFC25CFEC57003A2DFF /* ScoreNode.swift */; };
 		3CB6C85925C687F80077B5FB /* torpedo.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3CB6C85725C687F70077B5FB /* torpedo.mp3 */; };
 		3CB6C85A25C687F80077B5FB /* TestSpark.sks in Resources */ = {isa = PBXBuildFile; fileRef = 3CB6C85825C687F80077B5FB /* TestSpark.sks */; };
@@ -57,6 +58,7 @@
 		3C0316FA25C64E1F00F5371C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3C0316FD25C64E1F00F5371C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3C0316FF25C64E1F00F5371C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3C1C46A825EB2C6300557025 /* SplashScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenViewController.swift; sourceTree = "<group>"; };
 		3CAF2DFC25CFEC57003A2DFF /* ScoreNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreNode.swift; sourceTree = "<group>"; };
 		3CB6C85725C687F70077B5FB /* torpedo.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = torpedo.mp3; sourceTree = "<group>"; };
 		3CB6C85825C687F80077B5FB /* TestSpark.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = TestSpark.sks; sourceTree = "<group>"; };
@@ -136,6 +138,7 @@
 				3C0316FA25C64E1F00F5371C /* Assets.xcassets */,
 				3C0316FC25C64E1F00F5371C /* LaunchScreen.storyboard */,
 				3C0316FF25C64E1F00F5371C /* Info.plist */,
+				3C1C46A825EB2C6300557025 /* SplashScreenViewController.swift */,
 			);
 			path = AlphabetWar;
 			sourceTree = "<group>";
@@ -379,6 +382,7 @@
 			files = (
 				3CAF2DFD25CFEC57003A2DFF /* ScoreNode.swift in Sources */,
 				3CB6C87425C689930077B5FB /* TargetNode.swift in Sources */,
+				3C1C46A925EB2C6300557025 /* SplashScreenViewController.swift in Sources */,
 				3CB6C87225C6896C0077B5FB /* Letter.swift in Sources */,
 				3CB6C87C25C68B360077B5FB /* GameDimension.swift in Sources */,
 				3CB6C87025C6893B0077B5FB /* EnemyLetterNode.swift in Sources */,
