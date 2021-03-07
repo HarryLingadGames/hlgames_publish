@@ -16,6 +16,7 @@
 		3C0316FB25C64E1F00F5371C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3C0316FA25C64E1F00F5371C /* Assets.xcassets */; };
 		3C0316FE25C64E1F00F5371C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C0316FC25C64E1F00F5371C /* LaunchScreen.storyboard */; };
 		3C1C46A925EB2C6300557025 /* SplashScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C1C46A825EB2C6300557025 /* SplashScreenViewController.swift */; };
+		3C9D95D025F3946C007B0961 /* GameViewController+Admob.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C9D95CF25F3946C007B0961 /* GameViewController+Admob.swift */; };
 		3CAF2DFD25CFEC57003A2DFF /* ScoreNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CAF2DFC25CFEC57003A2DFF /* ScoreNode.swift */; };
 		3CB6C85925C687F80077B5FB /* torpedo.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3CB6C85725C687F70077B5FB /* torpedo.mp3 */; };
 		3CB6C85A25C687F80077B5FB /* TestSpark.sks in Resources */ = {isa = PBXBuildFile; fileRef = 3CB6C85825C687F80077B5FB /* TestSpark.sks */; };
@@ -59,6 +60,7 @@
 		3C0316FD25C64E1F00F5371C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3C0316FF25C64E1F00F5371C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3C1C46A825EB2C6300557025 /* SplashScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenViewController.swift; sourceTree = "<group>"; };
+		3C9D95CF25F3946C007B0961 /* GameViewController+Admob.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameViewController+Admob.swift"; sourceTree = "<group>"; };
 		3CAF2DFC25CFEC57003A2DFF /* ScoreNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreNode.swift; sourceTree = "<group>"; };
 		3CB6C85725C687F70077B5FB /* torpedo.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = torpedo.mp3; sourceTree = "<group>"; };
 		3CB6C85825C687F80077B5FB /* TestSpark.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = TestSpark.sks; sourceTree = "<group>"; };
@@ -123,6 +125,7 @@
 		3C0316EC25C64E1D00F5371C /* AlphabetWar */ = {
 			isa = PBXGroup;
 			children = (
+				3C9D95CE25F393EE007B0961 /* Game */,
 				3CB6C85625C6875F0077B5FB /* GameStatus */,
 				3CB6C85525C687550077B5FB /* Customs */,
 				3CB6C85425C687480077B5FB /* Helpers */,
@@ -132,8 +135,6 @@
 				3C0316ED25C64E1D00F5371C /* AppDelegate.swift */,
 				3C0316EF25C64E1D00F5371C /* GameScene.sks */,
 				3C0316F125C64E1D00F5371C /* Actions.sks */,
-				3C0316F325C64E1D00F5371C /* GameScene.swift */,
-				3C0316F525C64E1D00F5371C /* GameViewController.swift */,
 				3C0316F725C64E1D00F5371C /* Main.storyboard */,
 				3C0316FA25C64E1F00F5371C /* Assets.xcassets */,
 				3C0316FC25C64E1F00F5371C /* LaunchScreen.storyboard */,
@@ -141,6 +142,16 @@
 				3C1C46A825EB2C6300557025 /* SplashScreenViewController.swift */,
 			);
 			path = AlphabetWar;
+			sourceTree = "<group>";
+		};
+		3C9D95CE25F393EE007B0961 /* Game */ = {
+			isa = PBXGroup;
+			children = (
+				3C0316F325C64E1D00F5371C /* GameScene.swift */,
+				3C0316F525C64E1D00F5371C /* GameViewController.swift */,
+				3C9D95CF25F3946C007B0961 /* GameViewController+Admob.swift */,
+			);
+			path = Game;
 			sourceTree = "<group>";
 		};
 		3CB6C85125C6871E0077B5FB /* Assets */ = {
@@ -400,6 +411,7 @@
 				3CB6C88325C68C210077B5FB /* AWGamePlayComponents.swift in Sources */,
 				3CB6C88525C68C3D0077B5FB /* GameScene+Play.swift in Sources */,
 				3CB6C87E25C68B740077B5FB /* ActionHelper.swift in Sources */,
+				3C9D95D025F3946C007B0961 /* GameViewController+Admob.swift in Sources */,
 				3CB6C87625C689B10077B5FB /* TorpedoNode.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -537,6 +549,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";

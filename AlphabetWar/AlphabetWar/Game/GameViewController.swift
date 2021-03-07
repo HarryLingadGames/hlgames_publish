@@ -12,6 +12,7 @@ import UIKit
 import SpriteKit
 import GameplayKit
 import GoogleMobileAds
+import FBAudienceNetwork
 //import StoreKit
 
 protocol GameViewControllerProtocol {
@@ -24,19 +25,20 @@ protocol PlayComponentProtocol {
     func updateKeyboardHeight(height: CGFloat)
 }
 
-class GameViewController: UIViewController, KeyBoardProtocol, UITextFieldDelegate, GADFullScreenContentDelegate {
+class GameViewController: UIViewController, KeyBoardProtocol, UITextFieldDelegate, FBInterstitialAdDelegate {
     
     var awTextField: UITextField = UITextField()
     var gameDelegate: GameViewControllerProtocol?
     var playComponentDelegate: PlayComponentProtocol?
     var isKeyBoardShown: Bool = false
     
-    private var interstitial: GADInterstitialAd?
+    var interstitial: GADInterstitialAd?
+    var fbInterstitialAd: FBInterstitialAd?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        createAd()
+        createAdMob()
 
         let notificationCenter = NotificationCenter.default
         notificationCenter.addObserver(self, selector: #selector(appMovedToBackground), name: UIApplication.willResignActiveNotification, object: nil)
@@ -152,46 +154,23 @@ class GameViewController: UIViewController, KeyBoardProtocol, UITextFieldDelegat
 //            SKStoreReviewController.requestReview()
 //        }
 //    }
-
-    func openAdmob() {
-        if interstitial != nil {
-            interstitial?.present(fromRootViewController: self)
-        } else {
-            print("Ad wasn't ready")
-        }
+    
+    //Hash: b602d594afd2b0b327e07a06f36ca6a7e42546d0
+    //For 771308210172928_771317576838658
+    
+    func openAudienceNetwork() {
+        fbInterstitialAd = FBInterstitialAd(placementID: "771308210172928_771317576838658")
+        fbInterstitialAd?.delegate = self
+        fbInterstitialAd?.load()
     }
     
-    
-    
-    //Production Ad Unit ID: ca-app-pub-9451992469726968/2509211671
-    private func createAd() {
-        let request = GADRequest()
-        GADInterstitialAd.load(withAdUnitID:"ca-app-pub-3940256099942544/4411468910",
-                               request: request,
-                               completionHandler: { [self] ad, error in
-                                if let error = error {
-                                    print("Failed to load interstitial ad with error: \(error.localizedDescription)")
-                                    return
-                                }
-                                interstitial = ad
-                                interstitial?.fullScreenContentDelegate = self
-                               }
-        )
+    func interstitialAd(_ interstitialAd: FBInterstitialAd, didFailWithError error: Error) {
+        print("AUDIENCE NETWORK ERROR: \(error.localizedDescription)")
     }
     
-    /// Tells the delegate that the ad failed to present full screen content.
-      func ad(_ ad: GADFullScreenPresentingAd, didFailToPresentFullScreenContentWithError error: Error) {
-        print("Ad did fail to present full screen content.")
-      }
+    func interstitialAdDidLoad(_ interstitialAd: FBInterstitialAd) {
+        fbInterstitialAd?.show(fromRootViewController: self)
+    }
 
-      /// Tells the delegate that the ad presented full screen content.
-      func adDidPresentFullScreenContent(_ ad: GADFullScreenPresentingAd) {
-        print("Ad did present full screen content.")
-      }
-
-      /// Tells the delegate that the ad dismissed full screen content.
-      func adDidDismissFullScreenContent(_ ad: GADFullScreenPresentingAd) {
-        print("Ad did dismiss full screen content.")
-        createAd()
-      }
+   
 }
