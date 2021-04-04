@@ -18,7 +18,7 @@ protocol KeyBoardProtocol {
 //    func openRateMe()
 }
 
-class GameScene: SKScene, SKPhysicsContactDelegate {
+class GameScene: SKScene, SKPhysicsContactDelegate, GameSceneProtocol {
     
     var xAcceleration:CGFloat = 0
     var playComponents: AWGamePlayComponents!
@@ -31,9 +31,12 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var keyBoardDelegate: KeyBoardProtocol?
 
     var gameViewController: GameViewController?
+
+    var shouldOpenAd: Bool = false
     
     //MARK : INITIALIZE
     override func didMove(to view: SKView) {
+        gameViewController?.gameSceneProtocol = self
         switch gameStatus {
         case GameStatus.StandBy:
             initializeStandByComponents()
@@ -125,10 +128,12 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                         initializePlayComponents()
                         gameStatus = GameStatus.StandBy
                     } else if node == gameOverComponents.gameOverPlayAgainButton {
-                        gameOverComponents.removeComponents(gameScene: self)
-                        playComponents.showAllComponents(scene: self)
-                        playComponents.lifeNode.initializeLifeImages()
-                        gameStatus = GameStatus.Play
+                        if !shouldOpenAd {
+                            gameOverComponents.removeComponents(gameScene: self)
+                            playComponents.showAllComponents(scene: self)
+                            playComponents.lifeNode.initializeLifeImages()
+                            gameStatus = GameStatus.Play
+                        }
                     } else {
                         print("NOTHING HAPPEN")
                     }
@@ -136,6 +141,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             }
             break
         }
+    }
+
+    func setShouldDisplayAdToFalse() {
+        shouldOpenAd = false
     }
 }
 

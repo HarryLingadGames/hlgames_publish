@@ -34,6 +34,6 @@ class GameDimension{
     
     static let ANCHOR_POINTS: CGPoint = CGPoint(x: 0, y: 0)
 
-    static let SCORE_TO_INCREASE_LEVEL:Int = 20
+    static let SCORE_TO_INCREASE_LEVEL:Int = 30
 }
 

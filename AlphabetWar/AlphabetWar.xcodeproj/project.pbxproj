@@ -44,6 +44,8 @@
 		3CB6C88925C68C840077B5FB /* GameScene+StandBy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB6C88825C68C840077B5FB /* GameScene+StandBy.swift */; };
 		3CB6C88B25C68CE50077B5FB /* AWGameGameOverComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB6C88A25C68CE50077B5FB /* AWGameGameOverComponents.swift */; };
 		3CB6C88D25C68D0A0077B5FB /* GameScene+GameOver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB6C88C25C68D0A0077B5FB /* GameScene+GameOver.swift */; };
+		4A67277826157D56003E6CA8 /* GameViewController+AudienceNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A67277726157D56003E6CA8 /* GameViewController+AudienceNetwork.swift */; };
+		4A67277B2616BF2B003E6CA8 /* AdCodes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A67277A2616BF2A003E6CA8 /* AdCodes.swift */; };
 		6D67A00F88A0317E9654E6A0 /* Pods_AlphabetWar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BCC8C81DB33DAA7174A54D7 /* Pods_AlphabetWar.framework */; };
 /* End PBXBuildFile section */
 
@@ -88,6 +90,8 @@
 		3CB6C88825C68C840077B5FB /* GameScene+StandBy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameScene+StandBy.swift"; sourceTree = "<group>"; };
 		3CB6C88A25C68CE50077B5FB /* AWGameGameOverComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AWGameGameOverComponents.swift; sourceTree = "<group>"; };
 		3CB6C88C25C68D0A0077B5FB /* GameScene+GameOver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameScene+GameOver.swift"; sourceTree = "<group>"; };
+		4A67277726157D56003E6CA8 /* GameViewController+AudienceNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameViewController+AudienceNetwork.swift"; sourceTree = "<group>"; };
+		4A67277A2616BF2A003E6CA8 /* AdCodes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdCodes.swift; sourceTree = "<group>"; };
 		90D099FAF0ABB04F7504B256 /* Pods-AlphabetWar.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlphabetWar.release.xcconfig"; path = "Target Support Files/Pods-AlphabetWar/Pods-AlphabetWar.release.xcconfig"; sourceTree = "<group>"; };
 		9BCC8C81DB33DAA7174A54D7 /* Pods_AlphabetWar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AlphabetWar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -150,6 +154,7 @@
 				3C0316F325C64E1D00F5371C /* GameScene.swift */,
 				3C0316F525C64E1D00F5371C /* GameViewController.swift */,
 				3C9D95CF25F3946C007B0961 /* GameViewController+Admob.swift */,
+				4A67277726157D56003E6CA8 /* GameViewController+AudienceNetwork.swift */,
 			);
 			path = Game;
 			sourceTree = "<group>";
@@ -191,6 +196,7 @@
 			children = (
 				3CB6C87925C68AC00077B5FB /* AWEnums.swift */,
 				3CB6C87B25C68B360077B5FB /* GameDimension.swift */,
+				4A67277A2616BF2A003E6CA8 /* AdCodes.swift */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -402,6 +408,7 @@
 				3CB6C88925C68C840077B5FB /* GameScene+StandBy.swift in Sources */,
 				3CB6C86C25C688C30077B5FB /* AWLettersSKSN.swift in Sources */,
 				3CB6C87A25C68AC00077B5FB /* AWEnums.swift in Sources */,
+				4A67277826157D56003E6CA8 /* GameViewController+AudienceNetwork.swift in Sources */,
 				3C0316F425C64E1D00F5371C /* GameScene.swift in Sources */,
 				3C0316F625C64E1D00F5371C /* GameViewController.swift in Sources */,
 				3CB6C88B25C68CE50077B5FB /* AWGameGameOverComponents.swift in Sources */,
@@ -409,6 +416,7 @@
 				3CB6C88D25C68D0A0077B5FB /* GameScene+GameOver.swift in Sources */,
 				3CB6C86E25C6890E0077B5FB /* ButtonsSKNode.swift in Sources */,
 				3CB6C88325C68C210077B5FB /* AWGamePlayComponents.swift in Sources */,
+				4A67277B2616BF2B003E6CA8 /* AdCodes.swift in Sources */,
 				3CB6C88525C68C3D0077B5FB /* GameScene+Play.swift in Sources */,
 				3CB6C87E25C68B740077B5FB /* ActionHelper.swift in Sources */,
 				3C9D95D025F3946C007B0961 /* GameViewController+Admob.swift in Sources */,
@@ -563,9 +571,9 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 6;
+				CURRENT_PROJECT_VERSION = 8;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = RYB7WNZ3YU;
 				INFOPLIST_FILE = AlphabetWar/Info.plist;
@@ -573,7 +581,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.06;
+				MARKETING_VERSION = 1.08;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-l\"c++\"",
@@ -633,7 +641,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.harrylingadgames.AlphabetWar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "AW Distribution Provisioning Profile";
+				PROVISIONING_PROFILE_SPECIFIER = "AW Development Provisioning Profile";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -645,9 +653,9 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 6;
+				CURRENT_PROJECT_VERSION = 8;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = RYB7WNZ3YU;
 				INFOPLIST_FILE = AlphabetWar/Info.plist;
@@ -655,7 +663,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.06;
+				MARKETING_VERSION = 1.08;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-l\"c++\"",
@@ -715,7 +723,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.harrylingadgames.AlphabetWar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "AW Distribution Provisioning Profile";
+				PROVISIONING_PROFILE_SPECIFIER = "AW Development Provisioning Profile";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

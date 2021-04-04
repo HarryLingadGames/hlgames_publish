@@ -13,7 +13,7 @@ import CoreMotion
 class AWGamePlayComponents: NSObject, PlayComponentProtocol {
 
     var level: Int = 1
-    var numberOfGameOver: Int = 0
+    var numberOfGameOver: Int = 1
     let defaults = UserDefaults.standard
     var lifeNode: LifeNode!
 

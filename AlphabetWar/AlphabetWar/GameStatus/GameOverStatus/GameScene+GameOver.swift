@@ -14,4 +14,8 @@ extension GameScene{
     func initializeGameOverComponents(score: Int){
         gameOverComponents = AWGameGameOverComponents(gameScene: self, score: score)
     }
+
+    func enableContinueButton() {
+        gameOverComponents.gameOverPlayAgainButton.isUserInteractionEnabled = true
+    }
 }

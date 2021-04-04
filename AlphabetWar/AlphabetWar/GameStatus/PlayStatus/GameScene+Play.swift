@@ -79,12 +79,12 @@ extension GameScene: GameViewControllerProtocol{
         }
         
         playComponents.recordNode.score += 1
-        
+
         if playComponents.recordNode.score % GameDimension.SCORE_TO_INCREASE_LEVEL == 0 {
             playComponents.level += 1
             
             playComponents.gameTimer.invalidate()
-            
+            print("PLAYER LEVEL : \(playComponents.level)")
             let enemyAppearanceTimeInterval = Double(GameDimension.TIME_ENEMY_WILL_APPEAR) - (Double(playComponents.level) * 0.05)
             playComponents.gameTimer = Timer.scheduledTimer(timeInterval: enemyAppearanceTimeInterval, target: self, selector: #selector(addEnemyLetter), userInfo: nil, repeats: true)
         }
@@ -103,13 +103,17 @@ extension GameScene: GameViewControllerProtocol{
             initializeGameOverComponents(score: playComponents.recordNode.score)
             gameStatus = .GameOver
             
-            if playComponents.numberOfGameOver / 2 == 1 {
-                keyBoardDelegate?.openAudienceNetwork()
-            } else if playComponents.numberOfGameOver / 4 == 1 {
-                playComponents.numberOfGameOver = 0
+//            if playComponents.numberOfGameOver / 5 == 1 {
+//                keyBoardDelegate?.openAudienceNetwork()
+//            } else
+
+            debugPrint("numberOfGameOver: \(playComponents.numberOfGameOver)")
+
+            if playComponents.numberOfGameOver / 3 == 1 {
+                playComponents.numberOfGameOver = 1
                 playComponents.defaults.set(playComponents.numberOfGameOver, forKey: "numberOfGameOver")
-//                keyBoardDelegate?.openAdmob()
-                
+                playComponents.scene.shouldOpenAd = true
+                keyBoardDelegate?.openAudienceNetwork()
             }else {
                 playComponents.numberOfGameOver += 1
                 playComponents.defaults.set(playComponents.numberOfGameOver, forKey: "numberOfGameOver")

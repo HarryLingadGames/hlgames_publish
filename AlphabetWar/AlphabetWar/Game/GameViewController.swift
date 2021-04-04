@@ -13,6 +13,7 @@ import SpriteKit
 import GameplayKit
 import GoogleMobileAds
 import FBAudienceNetwork
+import AdSupport
 //import StoreKit
 
 protocol GameViewControllerProtocol {
@@ -25,20 +26,29 @@ protocol PlayComponentProtocol {
     func updateKeyboardHeight(height: CGFloat)
 }
 
-class GameViewController: UIViewController, KeyBoardProtocol, UITextFieldDelegate, FBInterstitialAdDelegate {
+protocol GameSceneProtocol {
+    func setShouldDisplayAdToFalse()
+}
+
+
+class GameViewController: UIViewController, KeyBoardProtocol, UITextFieldDelegate {
     
     var awTextField: UITextField = UITextField()
     var gameDelegate: GameViewControllerProtocol?
     var playComponentDelegate: PlayComponentProtocol?
+    var gameSceneProtocol: GameSceneProtocol?
     var isKeyBoardShown: Bool = false
     
     var interstitial: GADInterstitialAd?
     var fbInterstitialAd: FBInterstitialAd?
+    var isAdOpen: Bool = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        createAdMob()
+
+//        createAdMob()
+        print("IDFA: \(String(describing: identifierForAdvertising()))")
+        createAudienceNetwork()
 
         let notificationCenter = NotificationCenter.default
         notificationCenter.addObserver(self, selector: #selector(appMovedToBackground), name: UIApplication.willResignActiveNotification, object: nil)
@@ -75,6 +85,11 @@ class GameViewController: UIViewController, KeyBoardProtocol, UITextFieldDelegat
             }
         }
         setUpKeyboard()
+    }
+
+    func createAudienceNetwork() {
+        fbInterstitialAd = FBInterstitialAd(placementID: AdCodes.AudienceNetwor.rawValue)
+        fbInterstitialAd?.delegate = self
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -154,23 +169,4 @@ class GameViewController: UIViewController, KeyBoardProtocol, UITextFieldDelegat
 //            SKStoreReviewController.requestReview()
 //        }
 //    }
-    
-    //Hash: b602d594afd2b0b327e07a06f36ca6a7e42546d0
-    //For 771308210172928_771317576838658
-    
-    func openAudienceNetwork() {
-        fbInterstitialAd = FBInterstitialAd(placementID: "771308210172928_771317576838658")
-        fbInterstitialAd?.delegate = self
-        fbInterstitialAd?.load()
-    }
-    
-    func interstitialAd(_ interstitialAd: FBInterstitialAd, didFailWithError error: Error) {
-        print("AUDIENCE NETWORK ERROR: \(error.localizedDescription)")
-    }
-    
-    func interstitialAdDidLoad(_ interstitialAd: FBInterstitialAd) {
-        fbInterstitialAd?.show(fromRootViewController: self)
-    }
-
-   
 }

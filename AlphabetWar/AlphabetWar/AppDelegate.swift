@@ -19,6 +19,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         GADMobileAds.sharedInstance().start(completionHandler: nil)
         print("TEST DEVICE HASH: \(FBAdSettings.testDeviceHash())")
         FBAdSettings.addTestDevice(FBAdSettings.testDeviceHash())
+        FBAdSettings.setAdvertiserTrackingEnabled(true)
+
+       
     
         Thread.sleep(forTimeInterval: 2.0)
         return true

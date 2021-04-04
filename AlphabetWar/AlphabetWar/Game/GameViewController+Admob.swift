@@ -20,17 +20,19 @@ extension GameViewController: GADFullScreenContentDelegate {
     }
     
     //Production Ad Unit ID: ca-app-pub-9451992469726968/2509211671
+
+  
     func createAdMob() {
         let request = GADRequest()
-        GADInterstitialAd.load(withAdUnitID:"ca-app-pub-3940256099942544/4411468910",
+        GADInterstitialAd.load(withAdUnitID:AdCodes.Admob.rawValue,
                                request: request,
                                completionHandler: { [self] ad, error in
                                 if let error = error {
                                     print("Failed to load interstitial ad with error: \(error.localizedDescription)")
                                     return
                                 }
-                                interstitial = ad
-                                interstitial?.fullScreenContentDelegate = self
+                                self.interstitial = ad
+                                self.interstitial?.fullScreenContentDelegate = self
                                }
         )
     }
