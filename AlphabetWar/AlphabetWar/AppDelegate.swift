@@ -8,7 +8,6 @@
 
 import GoogleMobileAds
 import UIKit
-import FBAudienceNetwork
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -17,12 +16,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         GADMobileAds.sharedInstance().start(completionHandler: nil)
+<<<<<<< HEAD
         print("TEST DEVICE HASH: \(FBAdSettings.testDeviceHash())")
         FBAdSettings.addTestDevice(FBAdSettings.testDeviceHash())
         FBAdSettings.setAdvertiserTrackingEnabled(true)
 
        
     
+=======
+>>>>>>> parent of 2b0cb4a... Done implementing but there is still issue
         Thread.sleep(forTimeInterval: 2.0)
         return true
     }

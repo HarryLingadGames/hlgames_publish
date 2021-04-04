@@ -103,6 +103,7 @@ extension GameScene: GameViewControllerProtocol{
             initializeGameOverComponents(score: playComponents.recordNode.score)
             gameStatus = .GameOver
             
+<<<<<<< HEAD
 //            if playComponents.numberOfGameOver / 5 == 1 {
 //                keyBoardDelegate?.openAudienceNetwork()
 //            } else
@@ -114,6 +115,12 @@ extension GameScene: GameViewControllerProtocol{
                 playComponents.defaults.set(playComponents.numberOfGameOver, forKey: "numberOfGameOver")
                 playComponents.scene.shouldOpenAd = true
                 keyBoardDelegate?.openAudienceNetwork()
+=======
+            if playComponents.numberOfGameOver / 4 == 1 {
+                playComponents.numberOfGameOver = 0
+                playComponents.defaults.set(playComponents.numberOfGameOver, forKey: "numberOfGameOver")
+                keyBoardDelegate?.openAdmob()
+>>>>>>> parent of 2b0cb4a... Done implementing but there is still issue
             }else {
                 playComponents.numberOfGameOver += 1
                 playComponents.defaults.set(playComponents.numberOfGameOver, forKey: "numberOfGameOver")

@@ -12,8 +12,11 @@ import UIKit
 import SpriteKit
 import GameplayKit
 import GoogleMobileAds
+<<<<<<< HEAD:AlphabetWar/AlphabetWar/Game/GameViewController.swift
 import FBAudienceNetwork
 import AdSupport
+=======
+>>>>>>> parent of 2b0cb4a... Done implementing but there is still issue:AlphabetWar/AlphabetWar/GameViewController.swift
 //import StoreKit
 
 protocol GameViewControllerProtocol {
@@ -26,12 +29,16 @@ protocol PlayComponentProtocol {
     func updateKeyboardHeight(height: CGFloat)
 }
 
+<<<<<<< HEAD:AlphabetWar/AlphabetWar/Game/GameViewController.swift
 protocol GameSceneProtocol {
     func setShouldDisplayAdToFalse()
 }
 
 
 class GameViewController: UIViewController, KeyBoardProtocol, UITextFieldDelegate {
+=======
+class GameViewController: UIViewController, KeyBoardProtocol, UITextFieldDelegate, GADFullScreenContentDelegate {
+>>>>>>> parent of 2b0cb4a... Done implementing but there is still issue:AlphabetWar/AlphabetWar/GameViewController.swift
     
     var awTextField: UITextField = UITextField()
     var gameDelegate: GameViewControllerProtocol?
@@ -39,6 +46,7 @@ class GameViewController: UIViewController, KeyBoardProtocol, UITextFieldDelegat
     var gameSceneProtocol: GameSceneProtocol?
     var isKeyBoardShown: Bool = false
     
+<<<<<<< HEAD:AlphabetWar/AlphabetWar/Game/GameViewController.swift
     var interstitial: GADInterstitialAd?
     var fbInterstitialAd: FBInterstitialAd?
     var isAdOpen: Bool = false
@@ -49,6 +57,14 @@ class GameViewController: UIViewController, KeyBoardProtocol, UITextFieldDelegat
 //        createAdMob()
         print("IDFA: \(String(describing: identifierForAdvertising()))")
         createAudienceNetwork()
+=======
+    private var interstitial: GADInterstitialAd?
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        createAd()
+>>>>>>> parent of 2b0cb4a... Done implementing but there is still issue:AlphabetWar/AlphabetWar/GameViewController.swift
 
         let notificationCenter = NotificationCenter.default
         notificationCenter.addObserver(self, selector: #selector(appMovedToBackground), name: UIApplication.willResignActiveNotification, object: nil)
@@ -169,4 +185,49 @@ class GameViewController: UIViewController, KeyBoardProtocol, UITextFieldDelegat
 //            SKStoreReviewController.requestReview()
 //        }
 //    }
+<<<<<<< HEAD:AlphabetWar/AlphabetWar/Game/GameViewController.swift
+=======
+
+    func openAdmob() {
+        if interstitial != nil {
+            interstitial?.present(fromRootViewController: self)
+        } else {
+            print("Ad wasn't ready")
+        }
+    }
+    
+    
+    
+    //Production Ad Unit ID: ca-app-pub-9451992469726968/2509211671
+    private func createAd() {
+        let request = GADRequest()
+        GADInterstitialAd.load(withAdUnitID:"ca-app-pub-3940256099942544/4411468910",
+                               request: request,
+                               completionHandler: { [self] ad, error in
+                                if let error = error {
+                                    print("Failed to load interstitial ad with error: \(error.localizedDescription)")
+                                    return
+                                }
+                                interstitial = ad
+                                interstitial?.fullScreenContentDelegate = self
+                               }
+        )
+    }
+    
+    /// Tells the delegate that the ad failed to present full screen content.
+      func ad(_ ad: GADFullScreenPresentingAd, didFailToPresentFullScreenContentWithError error: Error) {
+        print("Ad did fail to present full screen content.")
+      }
+
+      /// Tells the delegate that the ad presented full screen content.
+      func adDidPresentFullScreenContent(_ ad: GADFullScreenPresentingAd) {
+        print("Ad did present full screen content.")
+      }
+
+      /// Tells the delegate that the ad dismissed full screen content.
+      func adDidDismissFullScreenContent(_ ad: GADFullScreenPresentingAd) {
+        print("Ad did dismiss full screen content.")
+        createAd()
+      }
+>>>>>>> parent of 2b0cb4a... Done implementing but there is still issue:AlphabetWar/AlphabetWar/GameViewController.swift
 }

@@ -14,7 +14,6 @@ protocol KeyBoardProtocol {
     func showKeyboard()
     func hideKeyBoard()
     func openAdmob()
-    func openAudienceNetwork()
 //    func openRateMe()
 }
 
