@@ -30,7 +30,6 @@ protocol GameSceneProtocol {
     func setShouldDisplayAdToFalse()
 }
 
-
 class GameViewController: UIViewController, KeyBoardProtocol, UITextFieldDelegate {
     
     var awTextField: UITextField = UITextField()

@@ -18,8 +18,6 @@ extension GameViewController: FBInterstitialAdDelegate {
     //Hash: b602d594afd2b0b327e07a06f36ca6a7e42546d0
     //For 771308210172928_771317576838658
 
-
-
     func openAudienceNetwork() {
         if !isAdOpen {
             fbInterstitialAd?.load()
@@ -46,7 +44,6 @@ extension GameViewController: FBInterstitialAdDelegate {
         // Get and return IDFA
         return ASIdentifierManager.shared().advertisingIdentifier.uuidString
     }
-
 
     func interstitialAdDidClick(_ interstitialAd: FBInterstitialAd) {
         debugPrint("Audience Network: Dic Click")

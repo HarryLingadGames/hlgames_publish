@@ -36,7 +36,7 @@ class AWGameGameOverComponents: NSObject{
         super.init()
     }
 
-    init(gameScene: GameScene, score: Int){
+    init(gameScene: GameScene, score: Int) {
         let heightDivided = gameScene.size.height / 8
 
         quitNode = SKSpriteNode(imageNamed: "quit")
@@ -65,7 +65,7 @@ class AWGameGameOverComponents: NSObject{
         gameScene.addChild(highScoreLabel)
 
         scoreLabel = SKLabelNode(text: "Score: 0")
-        scoreLabel.position = CGPoint(x: gameScene.frame.size.width / 2, y: heightDivided * 3.5)  //"AmericanTypewriter-Bold"
+        scoreLabel.position = CGPoint(x: gameScene.frame.size.width / 2, y: heightDivided * 3.5)
         scoreLabel.fontSize = 30
         scoreLabel.fontColor = UIColor(red: 251, green: 174, blue: 21, alpha: 1)
         scoreLabel.fontName = "Comic Sans MS"

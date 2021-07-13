@@ -15,7 +15,6 @@ protocol KeyBoardProtocol {
     func hideKeyBoard()
     func openAdmob()
     func openAudienceNetwork()
-//    func openRateMe()
 }
 
 class GameScene: SKScene, SKPhysicsContactDelegate, GameSceneProtocol {
@@ -57,24 +56,20 @@ class GameScene: SKScene, SKPhysicsContactDelegate, GameSceneProtocol {
             break
         case GameStatus.Play:
 
-            for enemyLetter in playComponents.activeEnemyLetter {
-                if ((enemyLetter.position.y) - enemyLetter.size.height / 2) <= (playComponents.floorNode.size.height) {
-                    enemyLetterTouchTheFloorExplode(enemyLetter: enemyLetter)
+            let _ = playComponents.activeEnemyLetter.map {
+                if (($0.position.y) - $0.size.height / 2) <= (playComponents.floorNode.size.height) {
+                    enemyLetterTouchTheFloorExplode(enemyLetter: $0)
                 }
-                enemyLetter.runSmoke()
+                $0.runSmoke()
             }
 
             for torpedo in playComponents.activeTorpedo {
-                
-                
-                for enemyLetter in playComponents.activeEnemyLetter {
-                    
-                    if torpedo.targetLetter?.type == enemyLetter.type {
-                        if torpedo.position.y >= enemyLetter.position.y {
-                            torpedoDidCollideWithAlien(torpedoNode: torpedo, enemyLetter: enemyLetter)
+                let _ = playComponents.activeEnemyLetter.map {
+                    if torpedo.targetLetter?.type == $0.type {
+                        if torpedo.position.y >= $0.position.y {
+                            torpedoDidCollideWithAlien(torpedoNode: torpedo, enemyLetter: $0)
                         }
                     }
-                    
                 }
                 
                 let torpedoPosition = torpedo.size.height + torpedo.position.y
