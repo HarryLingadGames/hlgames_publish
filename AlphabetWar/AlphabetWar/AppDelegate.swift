@@ -24,6 +24,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
        
     
         Thread.sleep(forTimeInterval: 2.0)
+
+        IAPManager.shared.fetchProduct()
         return true
     }
 

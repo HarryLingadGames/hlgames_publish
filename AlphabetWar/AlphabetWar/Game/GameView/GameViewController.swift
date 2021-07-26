@@ -21,6 +21,10 @@ protocol GameViewControllerProtocol {
     func gotoBackGround()
 }
 
+protocol GameNavigationProtocol {
+    func goToInAppPurchase()
+}
+
 protocol PlayComponentProtocol {
     func setKeyboardHeight(height: CGFloat)
     func updateKeyboardHeight(height: CGFloat)
@@ -36,6 +40,7 @@ class GameViewController: UIViewController, KeyBoardProtocol, UITextFieldDelegat
     var gameDelegate: GameViewControllerProtocol?
     var playComponentDelegate: PlayComponentProtocol?
     var gameSceneProtocol: GameSceneProtocol?
+    var navigationProtocol: GameNavigationProtocol?
     var isKeyBoardShown: Bool = false
     
     var interstitial: GADInterstitialAd?
@@ -60,6 +65,7 @@ class GameViewController: UIViewController, KeyBoardProtocol, UITextFieldDelegat
             if let sceneNode = scene.rootNode as! GameScene? {
                 sceneNode.gameViewController = self
                 sceneNode.keyBoardDelegate = self
+                sceneNode.navigationDelegate = self
                 sceneNode.size.width = self.view.frame.width
                 sceneNode.size.height = (self.view.frame.width * GameDimension.TARGET_GAMESCREEN_HEIGHT) / GameDimension.TARGET_GAMESCREEN_WIDTH
                 

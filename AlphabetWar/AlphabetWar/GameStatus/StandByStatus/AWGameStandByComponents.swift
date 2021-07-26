@@ -10,19 +10,27 @@ import SpriteKit
 import GameplayKit
 import CoreMotion
 
+protocol AWGameStandByNavigationProtocol {
+    func goToInAppPurchaseScreen()
+}
+
 class AWGameStandByComponents: NSObject{
 
     let defaults = UserDefaults.standard
 
+    var buyLifeButton: SKSpriteNode!
     var gameStandbyPlayButton: SKSpriteNode!
-    var gameLogoNode: SKSpriteNode!
 
+    var gameLogoNode: SKSpriteNode!
     var highScoreLabel:SKLabelNode!
+
     var highScore:Int = 0 {
         didSet {
             highScoreLabel.text = "HighScore: \(highScore)"
         }
     }
+
+    var navigationDelegate: AWGameStandByNavigationProtocol?
     
     override init() {
         super.init()
@@ -33,7 +41,6 @@ class AWGameStandByComponents: NSObject{
         let heightDivided = gameScene.size.height / 8
         gameLogoNode.position = CGPoint(x: gameScene.size.width / 2, y: heightDivided * 5.5)
         gameLogoNode.size = CGSize(width: 328, height: 193)
-        
         gameScene.addChild(gameLogoNode)
         
         gameStandbyPlayButton = SKSpriteNode(imageNamed: "play")
@@ -52,16 +59,26 @@ class AWGameStandByComponents: NSObject{
         let newScore = defaults.integer(forKey: "highScore")
         highScoreLabel.text = "HighScore: \(newScore)"
         gameScene.addChild(highScoreLabel)
+
+        buyLifeButton = SKSpriteNode(imageNamed: "play")
+        buyLifeButton.size = CGSize(width: 100, height: 83)
+        let buyLifeButtonX = gameScene.size.width - buyLifeButton.size.width
+        buyLifeButton.position = CGPoint(x: buyLifeButtonX, y: buyLifeButton.size.height)
+        gameScene.addChild(buyLifeButton)
     }
     
     func removeComponents(gameScene: GameScene){
-
         highScoreLabel.isHidden = true
-        gameStandbyPlayButton.isHidden = true
-        gameLogoNode.isHidden = true
         highScoreLabel.removeFromParent()
+
+        gameStandbyPlayButton.isHidden = true
         gameStandbyPlayButton.removeFromParent()
+
+        gameLogoNode.isHidden = true
         gameLogoNode.removeFromParent()
+
+        buyLifeButton.isHidden = true
+        buyLifeButton.removeFromParent()
     }
 }
 

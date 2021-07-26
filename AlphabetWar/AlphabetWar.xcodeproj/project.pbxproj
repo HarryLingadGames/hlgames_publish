@@ -46,6 +46,10 @@
 		3CB6C88D25C68D0A0077B5FB /* GameScene+GameOver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB6C88C25C68D0A0077B5FB /* GameScene+GameOver.swift */; };
 		4A67277826157D56003E6CA8 /* GameViewController+AudienceNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A67277726157D56003E6CA8 /* GameViewController+AudienceNetwork.swift */; };
 		4A67277B2616BF2B003E6CA8 /* AdCodes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A67277A2616BF2A003E6CA8 /* AdCodes.swift */; };
+		4A9C3DCC26A57ACB00B20FA6 /* GameViewController+Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A9C3DCB26A57ACB00B20FA6 /* GameViewController+Delegate.swift */; };
+		4A9C3DDC26A7C89100B20FA6 /* IAPManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A9C3DDB26A7C89100B20FA6 /* IAPManager.swift */; };
+		4A9C3DF526AA540A00B20FA6 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A9C3DF426AA540900B20FA6 /* StoreKit.framework */; };
+		4AE99199269D983800759045 /* InAppPurchaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE99198269D983800759045 /* InAppPurchaseViewController.swift */; };
 		6D67A00F88A0317E9654E6A0 /* Pods_AlphabetWar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BCC8C81DB33DAA7174A54D7 /* Pods_AlphabetWar.framework */; };
 /* End PBXBuildFile section */
 
@@ -92,6 +96,11 @@
 		3CB6C88C25C68D0A0077B5FB /* GameScene+GameOver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameScene+GameOver.swift"; sourceTree = "<group>"; };
 		4A67277726157D56003E6CA8 /* GameViewController+AudienceNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameViewController+AudienceNetwork.swift"; sourceTree = "<group>"; };
 		4A67277A2616BF2A003E6CA8 /* AdCodes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdCodes.swift; sourceTree = "<group>"; };
+		4A9C3DCB26A57ACB00B20FA6 /* GameViewController+Delegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameViewController+Delegate.swift"; sourceTree = "<group>"; };
+		4A9C3DDB26A7C89100B20FA6 /* IAPManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAPManager.swift; sourceTree = "<group>"; };
+		4A9C3DDE26A7EB8300B20FA6 /* Configuration.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = Configuration.storekit; sourceTree = "<group>"; };
+		4A9C3DF426AA540900B20FA6 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		4AE99198269D983800759045 /* InAppPurchaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InAppPurchaseViewController.swift; sourceTree = "<group>"; };
 		90D099FAF0ABB04F7504B256 /* Pods-AlphabetWar.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlphabetWar.release.xcconfig"; path = "Target Support Files/Pods-AlphabetWar/Pods-AlphabetWar.release.xcconfig"; sourceTree = "<group>"; };
 		9BCC8C81DB33DAA7174A54D7 /* Pods_AlphabetWar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AlphabetWar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -102,6 +111,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6D67A00F88A0317E9654E6A0 /* Pods_AlphabetWar.framework in Frameworks */,
+				4A9C3DF526AA540A00B20FA6 /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -144,6 +154,7 @@
 				3C0316FC25C64E1F00F5371C /* LaunchScreen.storyboard */,
 				3C0316FF25C64E1F00F5371C /* Info.plist */,
 				3C1C46A825EB2C6300557025 /* SplashScreenViewController.swift */,
+				4A9C3DDE26A7EB8300B20FA6 /* Configuration.storekit */,
 			);
 			path = AlphabetWar;
 			sourceTree = "<group>";
@@ -151,10 +162,9 @@
 		3C9D95CE25F393EE007B0961 /* Game */ = {
 			isa = PBXGroup;
 			children = (
+				4A9C3DCF26A7C03400B20FA6 /* GameView */,
+				4A9C3DCE26A7C02200B20FA6 /* InAppPurchase */,
 				3C0316F325C64E1D00F5371C /* GameScene.swift */,
-				3C0316F525C64E1D00F5371C /* GameViewController.swift */,
-				3C9D95CF25F3946C007B0961 /* GameViewController+Admob.swift */,
-				4A67277726157D56003E6CA8 /* GameViewController+AudienceNetwork.swift */,
 			);
 			path = Game;
 			sourceTree = "<group>";
@@ -205,6 +215,7 @@
 			isa = PBXGroup;
 			children = (
 				3CB6C87D25C68B740077B5FB /* ActionHelper.swift */,
+				4A9C3DDB26A7C89100B20FA6 /* IAPManager.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -253,9 +264,29 @@
 			path = GameOverStatus;
 			sourceTree = "<group>";
 		};
+		4A9C3DCE26A7C02200B20FA6 /* InAppPurchase */ = {
+			isa = PBXGroup;
+			children = (
+				4AE99198269D983800759045 /* InAppPurchaseViewController.swift */,
+			);
+			path = InAppPurchase;
+			sourceTree = "<group>";
+		};
+		4A9C3DCF26A7C03400B20FA6 /* GameView */ = {
+			isa = PBXGroup;
+			children = (
+				3C0316F525C64E1D00F5371C /* GameViewController.swift */,
+				3C9D95CF25F3946C007B0961 /* GameViewController+Admob.swift */,
+				4A67277726157D56003E6CA8 /* GameViewController+AudienceNetwork.swift */,
+				4A9C3DCB26A57ACB00B20FA6 /* GameViewController+Delegate.swift */,
+			);
+			path = GameView;
+			sourceTree = "<group>";
+		};
 		B5B4523EC4E4721D14FC0786 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4A9C3DF426AA540900B20FA6 /* StoreKit.framework */,
 				9BCC8C81DB33DAA7174A54D7 /* Pods_AlphabetWar.framework */,
 			);
 			name = Frameworks;
@@ -400,6 +431,7 @@
 				3CAF2DFD25CFEC57003A2DFF /* ScoreNode.swift in Sources */,
 				3CB6C87425C689930077B5FB /* TargetNode.swift in Sources */,
 				3C1C46A925EB2C6300557025 /* SplashScreenViewController.swift in Sources */,
+				4A9C3DCC26A57ACB00B20FA6 /* GameViewController+Delegate.swift in Sources */,
 				3CB6C87225C6896C0077B5FB /* Letter.swift in Sources */,
 				3CB6C87C25C68B360077B5FB /* GameDimension.swift in Sources */,
 				3CB6C87025C6893B0077B5FB /* EnemyLetterNode.swift in Sources */,
@@ -414,7 +446,9 @@
 				3CB6C88B25C68CE50077B5FB /* AWGameGameOverComponents.swift in Sources */,
 				3C0316EE25C64E1D00F5371C /* AppDelegate.swift in Sources */,
 				3CB6C88D25C68D0A0077B5FB /* GameScene+GameOver.swift in Sources */,
+				4A9C3DDC26A7C89100B20FA6 /* IAPManager.swift in Sources */,
 				3CB6C86E25C6890E0077B5FB /* ButtonsSKNode.swift in Sources */,
+				4AE99199269D983800759045 /* InAppPurchaseViewController.swift in Sources */,
 				3CB6C88325C68C210077B5FB /* AWGamePlayComponents.swift in Sources */,
 				4A67277B2616BF2B003E6CA8 /* AdCodes.swift in Sources */,
 				3CB6C88525C68C3D0077B5FB /* GameScene+Play.swift in Sources */,

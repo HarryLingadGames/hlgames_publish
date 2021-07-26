@@ -17,6 +17,10 @@ protocol KeyBoardProtocol {
     func openAudienceNetwork()
 }
 
+protocol GameSceneNavigationProtocol {
+    func goToInAppPurchaseScreen()
+}
+
 class GameScene: SKScene, SKPhysicsContactDelegate, GameSceneProtocol {
     
     var xAcceleration:CGFloat = 0
@@ -28,6 +32,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate, GameSceneProtocol {
     var enemyCounter: Int = 0
 
     var keyBoardDelegate: KeyBoardProtocol?
+    var navigationDelegate: GameSceneNavigationProtocol?
 
     var gameViewController: GameViewController?
 
@@ -92,7 +97,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate, GameSceneProtocol {
         switch gameStatus {
         case GameStatus.StandBy:
             print("StandBy")
-            standByComponents.removeComponents(gameScene: self)
             break
         case GameStatus.Play:
             print("Play")
@@ -105,8 +109,21 @@ class GameScene: SKScene, SKPhysicsContactDelegate, GameSceneProtocol {
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         switch gameStatus {
         case GameStatus.StandBy:
-            playButtonExplode()
-            gameStatus = GameStatus.Play
+            for touch in touches {
+                let location = touch.location(in: self)
+                let touchedNode = self.nodes(at: location)
+                for node in touchedNode {
+                    if node == standByComponents.gameStandbyPlayButton {
+                        playButtonExplode()
+                        gameStatus = GameStatus.Play
+                    } else if node == standByComponents.buyLifeButton {
+                        navigationDelegate?.goToInAppPurchaseScreen()
+                    }
+                }
+            }
+
+
+            standByComponents.removeComponents(gameScene: self)
             break
         case GameStatus.Play:
             break

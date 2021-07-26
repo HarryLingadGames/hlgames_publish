@@ -66,6 +66,33 @@
             </objects>
             <point key="canvasLocation" x="141" y="104"/>
         </scene>
+        <!--In App Purchase View Controller-->
+        <scene sceneID="bRa-78-I1Q">
+            <objects>
+                <viewController storyboardIdentifier="InAppPurchaseViewController" id="vUp-HD-gFW" customClass="InAppPurchaseViewController" customModule="AlphabetWar" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Crj-K0-YWH">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="IN APP PURCHASE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3cT-tG-t5l">
+                                <rect key="frame" x="134.5" y="437.5" width="145" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="csb-Cj-kNh"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="3cT-tG-t5l" firstAttribute="centerX" secondItem="Crj-K0-YWH" secondAttribute="centerX" id="8Rw-2V-VqT"/>
+                            <constraint firstItem="3cT-tG-t5l" firstAttribute="centerY" secondItem="Crj-K0-YWH" secondAttribute="centerY" id="WTx-UE-LAL"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jXv-Nq-uDe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="933" y="104"/>
+        </scene>
     </scenes>
     <resources>
         <image name="AppLogo" width="1200" height="1200"/>
