@@ -1,11 +1,13 @@
 PODS:
-  - FBAudienceNetwork (6.3.0):
-    - FBSDKCoreKit/Basics (>= 7.0.1)
-  - FBSDKCoreKit/Basics (9.0.1)
+  - FBAudienceNetwork (6.5.1):
+    - FBSDKCoreKit_Basics
+  - FBSDKCoreKit_Basics (11.0.1):
+    - FBSDKCoreKit_Basics/Basics (= 11.0.1)
+  - FBSDKCoreKit_Basics/Basics (11.0.1)
   - Google-Mobile-Ads-SDK (8.1.0):
     - GoogleAppMeasurement (~> 7.0)
     - GoogleUserMessagingPlatform (~> 1.1)
-  - GoogleAppMeasurement (7.6.0):
+  - GoogleAppMeasurement (7.7.0):
     - GoogleUtilities/AppDelegateSwizzler (~> 7.0)
     - GoogleUtilities/MethodSwizzler (~> 7.0)
     - GoogleUtilities/Network (~> 7.0)
@@ -35,32 +37,50 @@ PODS:
   - nanopb/decode (2.30907.0)
   - nanopb/encode (2.30907.0)
   - PromisesObjC (1.2.12)
+  - QuickLayout (3.0.0)
+  - SnapKit (5.0.1)
+  - SwiftEntryKit (1.2.7):
+    - QuickLayout (= 3.0.0)
+  - SwiftMessages (9.0.3):
+    - SwiftMessages/App (= 9.0.3)
+  - SwiftMessages/App (9.0.3)
 
 DEPENDENCIES:
   - FBAudienceNetwork
   - Google-Mobile-Ads-SDK
+  - SnapKit (~> 5.0.0)
+  - SwiftEntryKit (= 1.2.7)
+  - SwiftMessages
 
 SPEC REPOS:
   trunk:
     - FBAudienceNetwork
-    - FBSDKCoreKit
+    - FBSDKCoreKit_Basics
     - Google-Mobile-Ads-SDK
     - GoogleAppMeasurement
     - GoogleUserMessagingPlatform
     - GoogleUtilities
     - nanopb
     - PromisesObjC
+    - QuickLayout
+    - SnapKit
+    - SwiftEntryKit
+    - SwiftMessages
 
 SPEC CHECKSUMS:
-  FBAudienceNetwork: 58b4d0f2359783e5bc9ee59f138b4fda43173ac4
-  FBSDKCoreKit: fada1a6a0076724678993ff05a633848765ff18c
+  FBAudienceNetwork: 9a5f277d6ed36a46354a045c46a4858b47407a72
+  FBSDKCoreKit_Basics: 06780a4a12e16596bde8406add02c6aa1bf38616
   Google-Mobile-Ads-SDK: efb7fb74595668fbbe680f0d1c06f9a8ff694c7c
-  GoogleAppMeasurement: c542a2feaac9ab98fd074e8f1a02c3585bbfbd47
+  GoogleAppMeasurement: 0c3b134b2c0a90c4c24833873894bfe0e42a0384
   GoogleUserMessagingPlatform: b168e8c46cd8f92aa3e34b584c4ca78a411ce367
   GoogleUtilities: 31c5b01f978a70c6cff2afc6272b3f1921614b43
   nanopb: 59221d7f958fb711001e6a449489542d92ae113e
   PromisesObjC: 3113f7f76903778cf4a0586bd1ab89329a0b7b97
+  QuickLayout: 07b45a72b10083fee3f095990cfed1c1e7b27f0a
+  SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
+  SwiftEntryKit: 537c92699d6034efb1ef9c32b11e0b37c97aa589
+  SwiftMessages: 077f19126c24033fe24042237ecc20261adb46e4
 
-PODFILE CHECKSUM: 6674ec653c15b12cc0d16e67846881f8866fad2d
+PODFILE CHECKSUM: f6dbc9b30bcf4d2749e57ce54520aa7fff3e3b64
 
 COCOAPODS: 1.10.1

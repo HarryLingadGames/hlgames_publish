@@ -8,10 +8,23 @@
 
 import Foundation
 import UIKit
+import SwiftEntryKit
 
 extension GameViewController: GameSceneNavigationProtocol {
     func goToInAppPurchaseScreen() {
+//        goToInAppPurchaseViewController()
+        goToInAppAlertView()
+    }
 
+    func goToInAppAlertView() {
+
+        InAppAlertPresenter.intance.showInAppAlert {_ in
+            print("OK")
+        }
+    }
+
+
+    func goToInAppPurchaseViewController() {
         print("Buy Life")
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
         let inAppVC = storyBoard.instantiateViewController(withIdentifier: "InAppPurchaseViewController") as! InAppPurchaseViewController

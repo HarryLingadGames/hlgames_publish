@@ -21,8 +21,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         FBAdSettings.addTestDevice(FBAdSettings.testDeviceHash())
         FBAdSettings.setAdvertiserTrackingEnabled(true)
 
-       
-    
         Thread.sleep(forTimeInterval: 2.0)
 
         IAPManager.shared.fetchProduct()

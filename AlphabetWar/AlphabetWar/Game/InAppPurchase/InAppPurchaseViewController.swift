@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import SwiftEntryKit
 
 struct ProductModel {
     let title: String?
@@ -81,8 +82,9 @@ class InAppPurchaseViewController: UIViewController, UITableViewDelegate, UITabl
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
-        models[indexPath.row].handler()
+//        tableView.deselectRow(at: indexPath, animated: true)
+//        models[indexPath.row].handler()
+        goToInAppAlertView2()
     }
 
     var myLifeCount: Int {
@@ -104,6 +106,38 @@ class InAppPurchaseViewController: UIViewController, UITableViewDelegate, UITabl
 
         tableView.tableHeaderView = header
     }
+
+    func goToInAppAlertView() {
+
+        let sampleView = UIView(frame: self.view.bounds)
+        sampleView.backgroundColor = .systemGreen
+
+//        let customView = AWInAppAlertView()
+        var attributes = EKAttributes()
+        attributes.position = .bottom
+
+
+        SwiftEntryKit.display(entry: sampleView, using: attributes)
+    }
+
+    func goToInAppAlertView2() {
+        var attributes = EKAttributes()
+        attributes = .topFloat
+        attributes.displayDuration = 3
+        attributes.positionConstraints.size = .init(width: .offset(value: 0), height: .intrinsic)
+        let edgeWidth = min(UIScreen.main.bounds.width, UIScreen.main.bounds.height)
+        attributes.positionConstraints.maxSize = .init(width: .constant(value: edgeWidth),
+                                                                           height: .offset(value: 206))
+        attributes.positionConstraints.verticalOffset = .init(30)
+
+        let sampleView = UIView(frame: self.view.bounds)
+        sampleView.backgroundColor = .systemGreen
+
+        SwiftEntryKit.display(entry: sampleView,
+                              using: attributes)
+    }
+
+
 }
 
 
