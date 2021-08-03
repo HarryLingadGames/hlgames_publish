@@ -10,10 +10,9 @@ import UIKit
 
 class AWInAppDialogView: UIView {
 
-//    @IBOutlet private weak var titleLbl: UILabel!
-//    @IBOutlet private weak var bodyLbl: UILabel!
-//    @IBOutlet private weak var okBtn: UIButton!
-//    @IBOutlet private weak var cancelBtn: UIButton!
+    @IBOutlet private weak var life50Btn: UIButton!
+    @IBOutlet private weak var life100Btn: UIButton!
+    @IBOutlet private weak var life150Btn: UIButton!
 
     private var alertHandler: AlertHandler?
 
@@ -21,28 +20,16 @@ class AWInAppDialogView: UIView {
         alertHandler = handler
     }
 
-//    @IBAction private func okButtonTapped(_ sender: Any) {
-//        alertHandler?(.ok)
-//    }
-//
-//    @IBAction private func cancelButtonTapped(_ sendel: Any) {
-//        alertHandler?(.cancel)
-//    }
+    @IBAction func life50Tapped(_ sender: Any) {
+        print("Buy 50")
+    }
 
-//    override init(frame: CGRect) {
-//        super.init(frame: frame)
-//        commonInit()
-//    }
-//
-//    required init?(coder: NSCoder) {
-//        super.init(coder: coder)
-//        commonInit()
-//    }
-//
-//    func commonInit() {
-//        Bundle.main.loadNibNamed("AWInAppAlertView", owner: self, options: nil)
-////        addSubview(contentView)
-////        contentView.frame = self.bounds
-////        contentView.autoresizeMask = [.flexibleHeight, .flexibleWidth]
-//    }
+    @IBAction func life100Tapped(_ sender: Any) {
+        print("Buy 100")
+    }
+
+    @IBAction func life150Tapped(_ sender: Any) {
+        print("Buy 150")
+    }
+
 }
