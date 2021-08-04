@@ -11,6 +11,6 @@ import Foundation
 typealias AlertHandler = ((InAppAlertActionType) -> Void)
 
 protocol InAppAlertPresenterProtocol {
-    func showAlert(title: String, body: String, okButtonTitle: String, cancelButtonTitle: String, handler: AlertHandler?)
-    func showInAppAlert(handler: AlertHandler?)
+    func showInAppAlert(viewController: GameViewController, handler: AlertHandler?)
+    func hideInAppAlert()
 }

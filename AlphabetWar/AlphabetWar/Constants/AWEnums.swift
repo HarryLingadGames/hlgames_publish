@@ -101,12 +101,10 @@ enum LetterType: String {
     }
 }
 
-
-
-
 enum GameStatus: Int{
     case StandBy = 0
     case Play = 1
     case GameOver = 2
+    case InAppPurchase = 3
 }
 

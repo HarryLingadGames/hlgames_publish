@@ -44,8 +44,6 @@
 		3CB6C88925C68C840077B5FB /* GameScene+StandBy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB6C88825C68C840077B5FB /* GameScene+StandBy.swift */; };
 		3CB6C88B25C68CE50077B5FB /* AWGameGameOverComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB6C88A25C68CE50077B5FB /* AWGameGameOverComponents.swift */; };
 		3CB6C88D25C68D0A0077B5FB /* GameScene+GameOver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB6C88C25C68D0A0077B5FB /* GameScene+GameOver.swift */; };
-		4A05770E26B28D7400A57317 /* AWInAppAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A05770D26B28D7400A57317 /* AWInAppAlertView.swift */; };
-		4A05771226B28DA500A57317 /* AWInAppAlertView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A05771126B28DA500A57317 /* AWInAppAlertView.xib */; };
 		4A2C7B4926B8DD9D0013F391 /* InAppAlertPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A2C7B4826B8DD9D0013F391 /* InAppAlertPresenter.swift */; };
 		4A2C7B4C26B8DE260013F391 /* InAppAlertPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A2C7B4B26B8DE260013F391 /* InAppAlertPresenterProtocol.swift */; };
 		4A2C7B4F26B8DEE20013F391 /* InAppAlertActionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A2C7B4E26B8DEE20013F391 /* InAppAlertActionType.swift */; };
@@ -101,8 +99,6 @@
 		3CB6C88825C68C840077B5FB /* GameScene+StandBy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameScene+StandBy.swift"; sourceTree = "<group>"; };
 		3CB6C88A25C68CE50077B5FB /* AWGameGameOverComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AWGameGameOverComponents.swift; sourceTree = "<group>"; };
 		3CB6C88C25C68D0A0077B5FB /* GameScene+GameOver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameScene+GameOver.swift"; sourceTree = "<group>"; };
-		4A05770D26B28D7400A57317 /* AWInAppAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AWInAppAlertView.swift; sourceTree = "<group>"; };
-		4A05771126B28DA500A57317 /* AWInAppAlertView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AWInAppAlertView.xib; sourceTree = "<group>"; };
 		4A2C7B4826B8DD9D0013F391 /* InAppAlertPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InAppAlertPresenter.swift; sourceTree = "<group>"; };
 		4A2C7B4B26B8DE260013F391 /* InAppAlertPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InAppAlertPresenterProtocol.swift; sourceTree = "<group>"; };
 		4A2C7B4E26B8DEE20013F391 /* InAppAlertActionType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InAppAlertActionType.swift; sourceTree = "<group>"; };
@@ -274,8 +270,6 @@
 		4A05770826B28CCE00A57317 /* CustomView */ = {
 			isa = PBXGroup;
 			children = (
-				4A05770D26B28D7400A57317 /* AWInAppAlertView.swift */,
-				4A05771126B28DA500A57317 /* AWInAppAlertView.xib */,
 				4A2C7B6F26B917D00013F391 /* AWInAppDialogView.xib */,
 				4A2C7B7226B918F20013F391 /* AWInAppDialogView.swift */,
 			);
@@ -390,7 +384,6 @@
 				3C0316FE25C64E1F00F5371C /* LaunchScreen.storyboard in Resources */,
 				3CB6C86325C688100077B5FB /* base_explosion.sks in Resources */,
 				3CB6C85A25C687F80077B5FB /* TestSpark.sks in Resources */,
-				4A05771226B28DA500A57317 /* AWInAppAlertView.xib in Resources */,
 				3CB6C86625C688100077B5FB /* smoke.sks in Resources */,
 				3CB6C86A25C688100077B5FB /* explosion.mp3 in Resources */,
 				3CB6C85925C687F80077B5FB /* torpedo.mp3 in Resources */,
@@ -452,7 +445,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				4A2C7B4C26B8DE260013F391 /* InAppAlertPresenterProtocol.swift in Sources */,
-				4A05770E26B28D7400A57317 /* AWInAppAlertView.swift in Sources */,
 				3CAF2DFD25CFEC57003A2DFF /* ScoreNode.swift in Sources */,
 				3CB6C87425C689930077B5FB /* TargetNode.swift in Sources */,
 				3C1C46A925EB2C6300557025 /* SplashScreenViewController.swift in Sources */,

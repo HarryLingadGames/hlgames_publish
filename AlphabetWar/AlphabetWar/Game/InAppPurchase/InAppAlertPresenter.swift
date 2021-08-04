@@ -15,31 +15,16 @@ final class InAppAlertPresenter: NSObject, InAppAlertPresenterProtocol {
 
     public static var intance = InAppAlertPresenter()
 
+    public var viewController: GameViewController?
+
     private override init() {
     }
 
-    func showAlert(title: String, body: String, okButtonTitle: String, cancelButtonTitle: String, handler: AlertHandler?) {
+    func showInAppAlert(viewController: GameViewController, handler: AlertHandler?) {
+        self.viewController = viewController
 
-//        if let customAlertView = UINib(nibName: awInAppAlertView, bundle: nil).instantiate(withOwner: self, options: nil).first as? AWInAppAlertView {
-//            customAlertView.configure(title: title, body: body, okTitle: okButtonTitle, cancelTitle: cancelButtonTitle) { action in
-//                SwiftMessages.hide()
-//                handler?(action)
-//            }
-//
-//            var config = SwiftMessages.Config()
-//            config.presentationStyle = .center
-//            config.duration = .forever
-//            config.interactiveHide = false
-////            config.dimMode = .blur(style: .dark, alpha: 0.5, interactive: true)
-//
-//            SwiftMessages.show(config: config, view: customAlertView)
-//        }
-    }
-
-    func showInAppAlert(handler: AlertHandler?) {
         if let customAlertView = UINib(nibName: awInAppAlertView, bundle: nil).instantiate(withOwner: self, options: nil).first as? AWInAppDialogView {
             customAlertView.configure { action in
-                SwiftMessages.hide()
                 handler?(action)
             }
 
@@ -52,8 +37,10 @@ final class InAppAlertPresenter: NSObject, InAppAlertPresenterProtocol {
         }
     }
 
-
-
-
+    func hideInAppAlert() {
+        viewController?.goBackToStandByStatus()
+        viewController = nil
+        SwiftMessages.hide()
+    }
 }
 

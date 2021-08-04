@@ -18,16 +18,15 @@ extension GameViewController: GameSceneNavigationProtocol {
 
     func goToInAppAlertView() {
 
-        InAppAlertPresenter.intance.showInAppAlert {_ in
+        InAppAlertPresenter.intance.showInAppAlert(viewController: self) {_ in
             print("OK")
         }
     }
 
-
-    func goToInAppPurchaseViewController() {
-        print("Buy Life")
-        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-        let inAppVC = storyBoard.instantiateViewController(withIdentifier: "InAppPurchaseViewController") as! InAppPurchaseViewController
-        self.present(inAppVC, animated:true, completion:nil)
-    }
+//    func goToInAppPurchaseViewController() {
+//        print("Buy Life")
+//        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+//        let inAppVC = storyBoard.instantiateViewController(withIdentifier: "InAppPurchaseViewController") as! InAppPurchaseViewController
+//        self.present(inAppVC, animated:true, completion:nil)
+//    }
 }

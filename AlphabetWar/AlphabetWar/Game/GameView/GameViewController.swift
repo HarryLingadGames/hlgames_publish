@@ -32,6 +32,7 @@ protocol PlayComponentProtocol {
 
 protocol GameSceneProtocol {
     func setShouldDisplayAdToFalse()
+    func goBackToStandByStatus()
 }
 
 class GameViewController: UIViewController, KeyBoardProtocol, UITextFieldDelegate {
@@ -174,4 +175,8 @@ class GameViewController: UIViewController, KeyBoardProtocol, UITextFieldDelegat
 //            SKStoreReviewController.requestReview()
 //        }
 //    }
+
+    func goBackToStandByStatus() {
+        gameSceneProtocol?.goBackToStandByStatus()
+    }
 }

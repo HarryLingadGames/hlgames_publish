@@ -52,6 +52,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate, GameSceneProtocol {
         case GameStatus.GameOver:
             print("GameOver")
             break
+        case GameStatus.InAppPurchase:
+            print("InApp Purchase")
+            break
         }
     }
     
@@ -88,7 +91,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate, GameSceneProtocol {
             
             break
         case GameStatus.GameOver:
-
+            break
+        case GameStatus.InAppPurchase:
             break
         }
     }
@@ -102,6 +106,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate, GameSceneProtocol {
             print("Play")
             break
         case GameStatus.GameOver:
+            break
+        case GameStatus.InAppPurchase:
             break
         }
     }
@@ -117,11 +123,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate, GameSceneProtocol {
                         playButtonExplode()
                         gameStatus = GameStatus.Play
                     } else if node == standByComponents.buyLifeButton {
+                        gameStatus = GameStatus.InAppPurchase
                         navigationDelegate?.goToInAppPurchaseScreen()
                     }
                 }
             }
-
 
             standByComponents.removeComponents(gameScene: self)
             break
@@ -132,7 +138,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate, GameSceneProtocol {
                 let location = touch.location(in: self)
                 let touchedNode = self.nodes(at: location)
                 for node in touchedNode {
-
                     if node == gameOverComponents.quitNode {
                         gameOverComponents.removeComponents(gameScene: self)
                         playComponents.removeComponents(gameScene: self)
@@ -152,11 +157,20 @@ class GameScene: SKScene, SKPhysicsContactDelegate, GameSceneProtocol {
                 }
             }
             break
+        case GameStatus.InAppPurchase:
+            break
         }
     }
 
     func setShouldDisplayAdToFalse() {
         shouldOpenAd = false
+    }
+
+
+    func goBackToStandByStatus() {
+        initializeStandByComponents()
+        initializePlayComponents()
+        gameStatus = GameStatus.StandBy
     }
 }
 
