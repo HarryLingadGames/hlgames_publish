@@ -35,29 +35,34 @@ class AWGameStandByComponents: NSObject{
 
     var amountOfLife:Int {
         get {
+            let originalLifeCount = defaults.integer(forKey: "life_count")
 
-            let oldTime = defaults.integer(forKey: "time")
+            if originalLifeCount <= AWThresholds.LIFE_CONDITION_THRESHOLD {
+                let oldTime = defaults.integer(forKey: "time")
 
+                print("OLD TIME : \(oldTime)")
 
+                // using current date and time as an example
+                let newDate = Date()
 
+                // convert Date to TimeInterval (typealias for Double)
+                let timeInterval = newDate.timeIntervalSince1970
+                let timeIntervalInMinutes = Int(timeInterval / AWThresholds.CONVERT_MINUTES)
+                print("NEW TIME : \(timeIntervalInMinutes)")
 
-            // using current date and time as an example
-            let newDate = Date()
+                defaults.setValue(timeIntervalInMinutes , forKey: "time")
 
-            // convert Date to TimeInterval (typealias for Double)
-            let timeInterval = newDate.timeIntervalSince1970
+                let timeThatPass = timeIntervalInMinutes - oldTime
+                print("TIME : \(timeThatPass)")
 
+                let lifeMultiple = Int(timeThatPass / AWThresholds.LIFE_MULTIPLE)
 
-            defaults.setValue(timeInterval, forKey: "time")
-
-            // convert to Integer
-            let dateInInt = Int(timeInterval)
-
-            let timeMultiple = dateInInt - oldTime
-
-
-
-            print("TIME : \(timeMultiple)")
+                if lifeMultiple > 0 {
+                    let lifeToBeAdd = lifeMultiple * AWThresholds.LIFE_MULTIPLE
+                    let newLifeCount = originalLifeCount + lifeToBeAdd
+                    defaults.setValue(newLifeCount, forKey: "life_count")
+                }
+            }
             return defaults.integer(forKey: "life_count")
         }
     }

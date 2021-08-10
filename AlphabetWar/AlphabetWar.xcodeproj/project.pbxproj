@@ -49,6 +49,7 @@
 		4A2C7B4F26B8DEE20013F391 /* InAppAlertActionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A2C7B4E26B8DEE20013F391 /* InAppAlertActionType.swift */; };
 		4A2C7B7026B917D10013F391 /* AWInAppDialogView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A2C7B6F26B917D00013F391 /* AWInAppDialogView.xib */; };
 		4A2C7B7326B918F20013F391 /* AWInAppDialogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A2C7B7226B918F20013F391 /* AWInAppDialogView.swift */; };
+		4A4F87A626C2461200D331FA /* AWThresholds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A4F87A526C2461200D331FA /* AWThresholds.swift */; };
 		4A67277826157D56003E6CA8 /* GameViewController+AudienceNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A67277726157D56003E6CA8 /* GameViewController+AudienceNetwork.swift */; };
 		4A67277B2616BF2B003E6CA8 /* AdCodes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A67277A2616BF2A003E6CA8 /* AdCodes.swift */; };
 		4A9C3DCC26A57ACB00B20FA6 /* GameViewController+Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A9C3DCB26A57ACB00B20FA6 /* GameViewController+Delegate.swift */; };
@@ -104,6 +105,7 @@
 		4A2C7B4E26B8DEE20013F391 /* InAppAlertActionType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InAppAlertActionType.swift; sourceTree = "<group>"; };
 		4A2C7B6F26B917D00013F391 /* AWInAppDialogView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AWInAppDialogView.xib; sourceTree = "<group>"; };
 		4A2C7B7226B918F20013F391 /* AWInAppDialogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AWInAppDialogView.swift; sourceTree = "<group>"; };
+		4A4F87A526C2461200D331FA /* AWThresholds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AWThresholds.swift; sourceTree = "<group>"; };
 		4A67277726157D56003E6CA8 /* GameViewController+AudienceNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameViewController+AudienceNetwork.swift"; sourceTree = "<group>"; };
 		4A67277A2616BF2A003E6CA8 /* AdCodes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdCodes.swift; sourceTree = "<group>"; };
 		4A9C3DCB26A57ACB00B20FA6 /* GameViewController+Delegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameViewController+Delegate.swift"; sourceTree = "<group>"; };
@@ -217,6 +219,7 @@
 				3CB6C87925C68AC00077B5FB /* AWEnums.swift */,
 				3CB6C87B25C68B360077B5FB /* GameDimension.swift */,
 				4A67277A2616BF2A003E6CA8 /* AdCodes.swift */,
+				4A4F87A526C2461200D331FA /* AWThresholds.swift */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -449,6 +452,7 @@
 				3CB6C87425C689930077B5FB /* TargetNode.swift in Sources */,
 				3C1C46A925EB2C6300557025 /* SplashScreenViewController.swift in Sources */,
 				4A9C3DCC26A57ACB00B20FA6 /* GameViewController+Delegate.swift in Sources */,
+				4A4F87A626C2461200D331FA /* AWThresholds.swift in Sources */,
 				3CB6C87225C6896C0077B5FB /* Letter.swift in Sources */,
 				4A2C7B4926B8DD9D0013F391 /* InAppAlertPresenter.swift in Sources */,
 				3CB6C87C25C68B360077B5FB /* GameDimension.swift in Sources */,

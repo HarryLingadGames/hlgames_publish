@@ -15,7 +15,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N8X-z5-ZwY">
-                    <rect key="frame" x="100" y="0.0" width="400" height="400"/>
+                    <rect key="frame" x="100" y="35" width="400" height="400"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qz0-2C-kGI" userLabel="Header">
                             <rect key="frame" x="0.0" y="0.0" width="400" height="100"/>
@@ -160,13 +160,26 @@
                         <constraint firstAttribute="trailing" secondItem="MqA-Om-Bao" secondAttribute="trailing" constant="20" id="uoE-2f-Xy5"/>
                     </constraints>
                 </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RbJ-jg-v29">
+                    <rect key="frame" x="475" y="10" width="50" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="50" id="HwN-Pn-GUH"/>
+                        <constraint firstAttribute="height" constant="50" id="Nit-Lf-aX1"/>
+                    </constraints>
+                    <state key="normal" image="quit"/>
+                    <connections>
+                        <action selector="quitTapped:" destination="iN0-l3-epB" eventType="touchUpInside" id="qAm-nn-p5j"/>
+                    </connections>
+                </button>
             </subviews>
             <constraints>
-                <constraint firstItem="N8X-z5-ZwY" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="6f6-BF-oF2"/>
-                <constraint firstItem="N8X-z5-ZwY" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="BO5-EA-CnX"/>
-                <constraint firstAttribute="bottom" secondItem="N8X-z5-ZwY" secondAttribute="bottom" constant="70" id="OI2-ob-kaN"/>
+                <constraint firstItem="N8X-z5-ZwY" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="iN0-l3-epB" secondAttribute="leading" constant="35" id="6f6-BF-oF2"/>
+                <constraint firstItem="N8X-z5-ZwY" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="35" id="BO5-EA-CnX"/>
+                <constraint firstAttribute="bottom" secondItem="N8X-z5-ZwY" secondAttribute="bottom" constant="35" id="OI2-ob-kaN"/>
                 <constraint firstItem="N8X-z5-ZwY" firstAttribute="leading" relation="lessThanOrEqual" secondItem="iN0-l3-epB" secondAttribute="leading" constant="100" id="dLP-cC-zQh"/>
-                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="N8X-z5-ZwY" secondAttribute="trailing" constant="20" id="m7I-of-8hc"/>
+                <constraint firstItem="N8X-z5-ZwY" firstAttribute="top" secondItem="RbJ-jg-v29" secondAttribute="bottom" constant="-25" id="ekX-kM-2Ia"/>
+                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="N8X-z5-ZwY" secondAttribute="trailing" constant="35" id="m7I-of-8hc"/>
+                <constraint firstItem="RbJ-jg-v29" firstAttribute="leading" secondItem="N8X-z5-ZwY" secondAttribute="trailing" constant="-25" id="rgs-Qz-Plo"/>
                 <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="N8X-z5-ZwY" secondAttribute="trailing" constant="100" id="sSy-vS-W89"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
@@ -179,6 +192,7 @@
         </view>
     </objects>
     <resources>
+        <image name="quit" width="101" height="101"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

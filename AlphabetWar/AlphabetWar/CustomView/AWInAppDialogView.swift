@@ -88,6 +88,10 @@ class AWInAppDialogView: UIView {
         models[2].handler()
     }
 
+    @IBAction func quitTapped(_ sender: Any) {
+        hideInAppAlert()
+    }
+
     func setUpHeader() {
 //        let header = UIView(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: view.frame.size.width))
 //        let imageView = UIImageView(image: UIImage(named: "life_fire"))
