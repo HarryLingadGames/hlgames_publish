@@ -172,5 +172,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate, GameSceneProtocol {
         initializePlayComponents()
         gameStatus = GameStatus.StandBy
     }
+
+//    func goBackToStandByStatus(numLife: Int) {
+//        initializeStandByComponents()
+//        initializePlayComponents()
+//        gameStatus = GameStatus.StandBy
+//    }
 }
 

@@ -25,11 +25,11 @@ final class IAPManager: NSObject, SKPaymentTransactionObserver, SKProductsReques
         var count: Int {
             switch self {
             case .life_500:
-                return 500
+                return 50
             case .life_1000:
-                return 1000
+                return 100
             case .life_1500:
-                return 1500
+                return 150
             }
         }
     }

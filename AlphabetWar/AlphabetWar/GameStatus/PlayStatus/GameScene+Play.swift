@@ -117,7 +117,10 @@ extension GameScene: GameViewControllerProtocol{
             }else {
                 playComponents.numberOfGameOver += 1
                 playComponents.defaults.set(playComponents.numberOfGameOver, forKey: "numberOfGameOver")
+
             }
+
+            setLife()
         }
 
         if let explosion = SKEmitterNode(fileNamed: "base_explosion") {
@@ -147,6 +150,13 @@ extension GameScene: GameViewControllerProtocol{
             }
         }
     }
+
+    func setLife() {
+        let currentLife = playComponents.defaults.integer(forKey: "life_count")
+        let newLife = currentLife - 5
+        playComponents.defaults.set(newLife, forKey: "life_count")
+    }
+
     
 //    func didBegin(_ contact: SKPhysicsContact) {
 //
